@@ -12,5 +12,12 @@ USERS = [
         "email": "juan.perez@example.com",
         "password": "123456",
         "saldo": 1000
+    },
+    {
+        "id": 3,
+        "name": "Dylan Suarez",
+        "email": "dylan.suarez@example.com",
+        "password": "123456",
+        "saldo": 0
     }
 ]
