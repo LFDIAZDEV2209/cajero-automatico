@@ -5,6 +5,7 @@ from modules.ATM.whithdrawAmount import whithdrawAmount
 from modules.ATM.depositAmount import depositAmount
 from data import USERS
 
+
 def ATMmodule():
     saldo = USERS[0]["saldo"]
     while True:
@@ -16,13 +17,15 @@ def ATMmodule():
                 listAmount(saldo)
             case "2":
                 cantidad, saldo = whithdrawAmount(saldo)
-                print(f"Retiro de {cantidad} realizado correctamente. Nuevo saldo: {saldo}")
+                print(
+                    f"\nRetiro de {cantidad} realizado correctamente. Nuevo saldo: {saldo}")
             case "3":
                 cantidad, saldo = depositAmount(saldo)
-                print(f"Deposito de {cantidad} realizado correctamente. Nuevo saldo: {saldo}")
+                print(
+                    f"\nDeposito de {cantidad} realizado correctamente. Nuevo saldo: {saldo}")
             case "4":
-                print("Gracias por usar el cajero automático")
+                print("\nGracias por usar el cajero automático")
                 break
             case _:
-                print("Opción inválida")
+                print("\nOpción inválida")
         pauseScreen()
