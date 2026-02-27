@@ -1,3 +1,3 @@
-def listAmount(saldo:float):
-    print("Consultar saldo")
-    print(f"Saldo actual: {saldo}")
+def listAmount(saldo: float):
+    print("\nConsultar saldo")
+    print(f"\nSaldo actual: {saldo}")
