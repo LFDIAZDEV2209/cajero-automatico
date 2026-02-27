@@ -3,26 +3,24 @@ from modules.utils.msg import MENU
 from modules.ATM.listAmount import listAmount
 from modules.ATM.whithdrawAmount import whithdrawAmount
 from modules.ATM.depositAmount import depositAmount
-from data import USERS
 
 
-def ATMmodule():
-    saldo = USERS[0]["saldo"]
+def ATMmodule(mySaldo: float):
     while True:
         deleteScreen()
         print(MENU)
         option = input("Ingrese una opcion: ")
         match option:
             case "1":
-                listAmount(saldo)
+                listAmount(mySaldo)
             case "2":
-                cantidad, saldo = whithdrawAmount(saldo)
+                cantidad, mySaldo = whithdrawAmount(mySaldo)
                 print(
-                    f"\nRetiro de {cantidad} realizado correctamente. Nuevo saldo: {saldo}")
+                    f"\nRetiro de {cantidad} realizado correctamente. Nuevo saldo: {mySaldo}")
             case "3":
-                cantidad, saldo = depositAmount(saldo)
+                cantidad, mySaldo = depositAmount(mySaldo)
                 print(
-                    f"\nDeposito de {cantidad} realizado correctamente. Nuevo saldo: {saldo}")
+                    f"\nDeposito de {cantidad} realizado correctamente. Nuevo saldo: {mySaldo}")
             case "4":
                 print("\nGracias por usar el cajero automático")
                 break
