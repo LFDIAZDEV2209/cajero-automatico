@@ -16,6 +16,7 @@ def register():
         "id": len(USERS) + 1,
         "name": name,
         "email": email,
-        "password": password
+        "password": password,
+        "saldo": 0
     })
     return True

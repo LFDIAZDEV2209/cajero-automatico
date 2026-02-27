@@ -12,8 +12,9 @@ def main():
         option = input("Ingrese una opcion: ")
         match option:
             case "1":
-                if login():
-                    ATMmodule()
+                isAuth, mySaldo = login()
+                if isAuth:
+                    ATMmodule(mySaldo)
                 else:
                     print("Credenciales incorrectas")
             case "2":
