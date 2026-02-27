@@ -4,6 +4,7 @@ from modules.utils.screenController import deleteScreen, pauseScreen
 from modules.auth.login import login
 from modules.auth.register import register
 
+
 def main():
     while True:
         deleteScreen()
@@ -21,11 +22,12 @@ def main():
                 else:
                     print("Registro fallido")
             case "3":
-                print("Gracias por usar el cajero automático")
+                print("\nGracias por usar el cajero automático")
                 break
             case _:
                 print("Opción inválida")
         pauseScreen()
+
 
 if __name__ == "__main__":
     main()
