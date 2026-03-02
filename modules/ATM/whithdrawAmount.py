@@ -1,4 +1,4 @@
-def whithdrawAmount(saldo: float):
+def whithdrawAmount(currentUser: dict):
     print("Retirar dinero")
 
     while True:
@@ -9,8 +9,10 @@ def whithdrawAmount(saldo: float):
         if cantidad < 0:
             print("\nLa cantidad a retirar debe ser mayor a 0")
             continue
-        if cantidad > saldo:
+        if cantidad > currentUser["saldo"]:
             print("\nFondos insuficientes")
             continue
         break
-    return cantidad, saldo - cantidad
+    currentUser["saldo"] -= cantidad
+    print("Cantidad retirada:", cantidad)
+    print("Saldo restante:", currentUser["saldo"])
