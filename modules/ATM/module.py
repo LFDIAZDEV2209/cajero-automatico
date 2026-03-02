@@ -5,22 +5,18 @@ from modules.ATM.whithdrawAmount import whithdrawAmount
 from modules.ATM.depositAmount import depositAmount
 
 
-def ATMmodule(mySaldo: float):
+def ATMmodule(currentUser: dict):
     while True:
         deleteScreen()
         print(MENU)
         option = input("Ingrese una opcion: ")
         match option:
             case "1":
-                listAmount(mySaldo)
+                listAmount(currentUser)
             case "2":
-                cantidad, mySaldo = whithdrawAmount(mySaldo)
-                print(
-                    f"\nRetiro de {cantidad} realizado correctamente. Nuevo saldo: {mySaldo}")
+                whithdrawAmount(currentUser)
             case "3":
-                cantidad, mySaldo = depositAmount(mySaldo)
-                print(
-                    f"\nDeposito de {cantidad} realizado correctamente. Nuevo saldo: {mySaldo}")
+                depositAmount(currentUser)
             case "4":
                 print("\nGracias por usar el cajero automático")
                 break

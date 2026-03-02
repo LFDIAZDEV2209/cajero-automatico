@@ -10,7 +10,5 @@ def login():
         if user["email"] == email and user["password"] == password:
             print("\nInicio de sesión exitoso")
             pauseScreen()
-            return True, user["saldo"]
-    print("\nCredenciales incorrectas")
-    pauseScreen()
-    return False
+            return True, user
+    return False, None

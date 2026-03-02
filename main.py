@@ -12,9 +12,9 @@ def main():
         option = input("Ingrese una opcion: ")
         match option:
             case "1":
-                isAuth, mySaldo = login()
+                isAuth, currentUser = login()
                 if isAuth:
-                    ATMmodule(mySaldo)
+                    ATMmodule(currentUser)
                 else:
                     print("Credenciales incorrectas")
             case "2":

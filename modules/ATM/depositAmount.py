@@ -1,4 +1,4 @@
-def depositAmount(saldo: float):
+def depositAmount(currentUser: dict):
     print("Depositar dinero")
 
     while True:
@@ -11,5 +11,6 @@ def depositAmount(saldo: float):
             continue
         break
 
-    saldo += cantidad
-    return cantidad, saldo
+    currentUser["saldo"] += cantidad
+    print("Cantidad depositada:", cantidad)
+    print("Saldo actual:", currentUser["saldo"])
