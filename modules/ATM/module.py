@@ -9,7 +9,7 @@ def ATMmodule(currentUser: dict):
     while True:
         deleteScreen()
         print(MENU)
-        option = input("Ingrese una opcion: ")
+        option = input("Enter an option: ")
         match option:
             case "1":
                 listAmount(currentUser)
@@ -18,8 +18,8 @@ def ATMmodule(currentUser: dict):
             case "3":
                 depositAmount(currentUser)
             case "4":
-                print("\nGracias por usar el cajero automático")
+                print("\nThanks for using the ATM")
                 break
             case _:
-                print("\nOpción inválida")
+                print("\nInvalid option")
         pauseScreen()

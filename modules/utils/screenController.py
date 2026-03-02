@@ -11,6 +11,6 @@ def deleteScreen():
 
 def pauseScreen():
     if sys.platform == "linux" or sys.platform == "darwin":
-        pause = input("\nPresione una tecla para continuar...")
+        pause = input("\nPress enter to continue...")
     else:
         system("pause")

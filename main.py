@@ -9,24 +9,24 @@ def main():
     while True:
         deleteScreen()
         print(MENU_USER)
-        option = input("Ingrese una opcion: ")
+        option = input("Enter an option: ")
         match option:
             case "1":
                 isAuth, currentUser = login()
                 if isAuth:
                     ATMmodule(currentUser)
                 else:
-                    print("Credenciales incorrectas")
+                    print("Credentials incorrects")
             case "2":
                 if register():
-                    print("Registro exitoso")
+                    print("Sign up successful")
                 else:
-                    print("Registro fallido")
+                    print("Sign up failed")
             case "3":
-                print("\nGracias por usar el cajero automático")
+                print("\nThanks for using the ATM")
                 break
             case _:
-                print("Opción inválida")
+                print("Invalid option")
         pauseScreen()
 
 

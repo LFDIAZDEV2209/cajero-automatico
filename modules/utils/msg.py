@@ -10,10 +10,10 @@ MENU = """
  \$$      \$$  \$$$$$$$ \$$  \$$$$$$$  \$$$$$$  \$$  \$$  \$$  \$$$$$$$       \$$   \$$   \$$    \$$      \$$       \$$   \$$ \$$  \$$$$$\$$$$  \$$
                                                                                                                                                    
                                                                                                                                                                                                                                                                                                       
-1. Consultar saldo.
-2. Retirar dinero.
-3. Depositar dinero.
-4. Salir.
+1. Check balance.
+2. Withdraw money.
+3. Deposit money.
+4. Exit.
 """
 
 MENU_USER = """
@@ -28,7 +28,7 @@ MENU_USER = """
  \$$      \$$  \$$$$$$$ \$$  \$$$$$$$  \$$$$$$  \$$  \$$  \$$  \$$$$$$$       \$$   \$$   \$$    \$$      \$$       \$$   \$$ \$$  \$$$$$\$$$$  \$$
                                                                                                                                                    
                                                                                                                                                                                                                                                                                                       
-1. Iniciar sesión.
-2. Registrarse.
-3. Salir.
+1. Log in.
+2. Sign up.
+3. Exit.
 """

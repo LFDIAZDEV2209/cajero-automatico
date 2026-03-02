@@ -3,12 +3,15 @@ from modules.utils.screenController import pauseScreen
 
 
 def login():
-    print("\nIniciar sesión")
-    email = input("\nIngrese su email: ")
-    password = input("Ingrese su contraseña: ")
+    print("\nLog in")
+
+    email = input("\nEnter your email: ")
+    password = input("Enter your password: ")
+
     for user in USERS:
         if user["email"] == email and user["password"] == password:
-            print("\nInicio de sesión exitoso")
+            print("\nLog in successful")
             pauseScreen()
             return True, user
+    
     return False, None
