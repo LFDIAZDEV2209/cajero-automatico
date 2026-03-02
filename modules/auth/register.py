@@ -1,28 +1,27 @@
-from data import USERS
-from modules.utils.screenController import pauseScreen
-from modules.utils.msg import showError, showTitle, showInput
+from modules.utils.msg import showTitle, showInput
+from modules.utils.corefiles import add_user, read_json, get_user_by_email
 
 
-def register():
-    """Register a new user"""
+def register() -> bool:
+    """Register a new user. Returns True if successful."""
+    users = read_json()
     showTitle("Sign up")
 
     name = showInput("Enter your name: ")
     email = showInput("Enter your email: ")
     password = showInput("Enter your password: ")
 
-    for user in USERS:
-        if user["email"] == email:
-            showError("Email already exists")
-            pauseScreen()
-            return False
-        
-    USERS.append({
-        "id": len(USERS) + 1,
+    if get_user_by_email(email):
+        return False  # Email already registered
+
+    next_id = max((u["id"] for u in users), default=0) + 1
+    if add_user({
+        "id": next_id,
         "name": name,
         "email": email,
         "password": password,
-        "balance": 0
-    })
-
-    return True
+        "balance": 0.0
+    }):
+        return True
+    else:
+        return False

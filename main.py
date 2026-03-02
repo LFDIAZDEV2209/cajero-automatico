@@ -1,12 +1,14 @@
 from modules.ATM.module import ATMmodule
 from modules.utils.msg import showTitle, showLoginMenu, showError, showSuccess
 from modules.utils.screenController import deleteScreen, pauseScreen
+from modules.utils.corefiles import initialize_json
 from modules.auth.login import login
 from modules.auth.register import register
 
 
-def main():
+def main() -> None:
     """Main function"""
+    initialize_json()
     while True:
         deleteScreen()
         showTitle("Welcome to the ATM Riwi")
