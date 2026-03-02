@@ -1,16 +1,16 @@
 def depositAmount(currentUser: dict):
-    print("Depositar dinero")
+    print("Deposit money")
 
     while True:
         try:
-            cantidad = float(input("\nIngrese la cantidad a depositar: "))
+            cantidad = float(input("\nEnter the amount to deposit: "))
         except ValueError:
             cantidad = -1
         if cantidad < 0:
-            print("\nLa cantidad a depositar debe ser mayor a 0")
+            print("\nThe amount to deposit must be greater than 0")
             continue
         break
 
-    currentUser["saldo"] += cantidad
-    print("Cantidad depositada:", cantidad)
-    print("Saldo actual:", currentUser["saldo"])
+    currentUser["balance"] += cantidad
+    print("Amount deposited:", cantidad)
+    print("Current balance:", currentUser["balance"])
