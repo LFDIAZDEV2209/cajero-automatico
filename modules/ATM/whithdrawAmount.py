@@ -1,6 +1,7 @@
 from modules.utils.msg import showSuccess, showTitle, showInput, showError
 
 def whithdrawAmount(currentUser: dict):
+    """Withdraw money from the user's account"""
     showTitle("Withdraw money")
 
     while True:

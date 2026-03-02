@@ -1,6 +1,7 @@
 from modules.utils.msg import showTitle, showError, showSuccess, showInput
 
 def depositAmount(currentUser: dict):
+    """Deposit money into the user's account"""
     showTitle("Deposit money")
 
     while True:

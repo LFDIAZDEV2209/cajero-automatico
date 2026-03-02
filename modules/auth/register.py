@@ -4,6 +4,7 @@ from modules.utils.msg import showError, showTitle, showInput
 
 
 def register():
+    """Register a new user"""
     showTitle("Sign up")
 
     name = showInput("Enter your name: ")

@@ -6,6 +6,7 @@ from modules.auth.register import register
 
 
 def main():
+    """Main function"""
     while True:
         deleteScreen()
         showTitle("Welcome to the ATM Riwi")

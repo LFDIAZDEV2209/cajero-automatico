@@ -7,6 +7,7 @@ from modules.ATM.depositAmount import depositAmount
 
 
 def ATMmodule(currentUser: dict):
+    """ATM main menu"""
     while True:
         deleteScreen()
         showTitle("ATM Riwi")
