@@ -1,19 +1,22 @@
+from modules.utils.msg import showSuccess, showTitle, showInput, showError
+
 def whithdrawAmount(currentUser: dict):
-    print("Withdraw money")
+    showTitle("Withdraw money")
 
     while True:
         try:
-            cantidad = float(input("\nEnter the amount to withdraw: "))
+            quantity = float(showInput("Enter the amount to withdraw: "))
         except ValueError:
-            cantidad = -1
-        if cantidad < 0:
-            print("\nThe amount to withdraw must be greater than 0")
+            showError("The amount to withdraw must be a number")
             continue
-        if cantidad > currentUser["balance"]:
-            print("\nInsufficient funds")
+        if quantity < 0:
+            showError("The amount to withdraw must be greater than 0")
+            continue
+        if quantity > currentUser["balance"]:
+            showError("Insufficient funds")
             continue
         break
 
-    currentUser["balance"] -= cantidad
-    print("Amount withdrawn:", cantidad)
-    print("Remaining balance:", currentUser["balance"])
+    currentUser["balance"] -= quantity
+    showSuccess(f"Amount withdrawn: {quantity}")
+    showSuccess(f"Remaining balance: {currentUser['balance']}")

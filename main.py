@@ -1,5 +1,5 @@
 from modules.ATM.module import ATMmodule
-from modules.utils.msg import MENU_USER
+from modules.utils.msg import showTitle, showLoginMenu, showError, showSuccess
 from modules.utils.screenController import deleteScreen, pauseScreen
 from modules.auth.login import login
 from modules.auth.register import register
@@ -8,25 +8,25 @@ from modules.auth.register import register
 def main():
     while True:
         deleteScreen()
-        print(MENU_USER)
-        option = input("Enter an option: ")
+        showTitle("Welcome to the ATM Riwi")
+        option = showLoginMenu()
         match option:
-            case "1":
+            case 1:
                 isAuth, currentUser = login()
                 if isAuth:
                     ATMmodule(currentUser)
                 else:
-                    print("Credentials incorrects")
-            case "2":
+                    showError("Credentials incorrects")
+            case 2:
                 if register():
-                    print("Sign up successful")
+                    showSuccess("Sign up successful")
                 else:
-                    print("Sign up failed")
-            case "3":
-                print("\nThanks for using the ATM")
+                    showError("Sign up failed")
+            case 3:
+                showSuccess("Thanks for using the ATM")
                 break
             case _:
-                print("Invalid option")
+                showError("Invalid option")
         pauseScreen()
 
 

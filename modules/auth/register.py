@@ -1,17 +1,18 @@
 from data import USERS
 from modules.utils.screenController import pauseScreen
+from modules.utils.msg import showError, showTitle, showInput
 
 
 def register():
-    print("Sign up")
+    showTitle("Sign up")
 
-    name = input("\nEnter your name: ")
-    email = input("Enter your email: ")
-    password = input("Enter your password: ")
+    name = showInput("Enter your name: ")
+    email = showInput("Enter your email: ")
+    password = showInput("Enter your password: ")
 
     for user in USERS:
         if user["email"] == email:
-            print("\nEmail already exists")
+            showError("Email already exists")
             pauseScreen()
             return False
         

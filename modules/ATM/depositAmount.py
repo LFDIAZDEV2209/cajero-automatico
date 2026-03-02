@@ -1,16 +1,19 @@
+from modules.utils.msg import showTitle, showError, showSuccess, showInput
+
 def depositAmount(currentUser: dict):
-    print("Deposit money")
+    showTitle("Deposit money")
 
     while True:
         try:
-            cantidad = float(input("\nEnter the amount to deposit: "))
+            quantity = float(showInput("Enter the amount to deposit: "))
         except ValueError:
-            cantidad = -1
-        if cantidad < 0:
-            print("\nThe amount to deposit must be greater than 0")
+            showError("The amount to deposit must be a number")
+            continue
+        if quantity < 0:
+            showError("The amount to deposit must be greater than 0")
             continue
         break
 
-    currentUser["balance"] += cantidad
-    print("Amount deposited:", cantidad)
-    print("Current balance:", currentUser["balance"])
+    currentUser["balance"] += quantity
+    showSuccess(f"Amount deposited: {quantity}")
+    showSuccess(f"Remaining balance: {currentUser['balance']}")

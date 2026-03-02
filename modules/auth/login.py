@@ -1,16 +1,16 @@
 from data import USERS
 from modules.utils.screenController import pauseScreen
-
+from modules.utils.msg import showSuccess, showTitle, showInput
 
 def login():
-    print("\nLog in")
+    showTitle("Log in")
 
-    email = input("\nEnter your email: ")
-    password = input("Enter your password: ")
+    email = showInput("Enter your email: ")
+    password = showInput("Enter your password: ")
 
     for user in USERS:
         if user["email"] == email and user["password"] == password:
-            print("\nLog in successful")
+            showSuccess("Log in successful")
             pauseScreen()
             return True, user
     
